@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <script src="/staticFiles/request_post.js"></script>
+    <link rel="stylesheet" href="/staticFiles/base.css">
+    <link rel="stylesheet" href="/staticFiles/responsive_mobile.css">
+  </head>
+  
+  <body>
+      <header>
+        <h1 class="website_title">Austin's Local Server</h1>
+        <nav>
+          <ul id="content-mobile">
+            <li><a class="active" href="">Home</a></li>
+          </ul>
+          <ul id="content-desktop">
+            <a class="active" href="">Home<a>
+            <a href="/🤫"> | <a>
+              <a href="/webhook">Webhook<a>
+          </ul>
+        </nav>
+      </header>
+      <li class="center"><a onclick="sendPostWithData()">Request Sends</a></li>
+      <li class="center"><input id="dataInput"></li>
+      <li class="center"><a onclick="sendPost()">Request Trst</a></li>
+  </body>
+</html>
