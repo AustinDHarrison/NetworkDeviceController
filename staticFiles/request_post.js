@@ -1,12 +1,13 @@
 function sendPostWithData() {
   var data = document.getElementById('dataInput').value;
+
   var request = new XMLHttpRequest();
   request.open("POST", "http://192.168.1.188:80/", true);
 
   request.setRequestHeader('Content-type', 'application/json');
 
-  var params = data
-
+  var params = JSON.parse(data);
+  console.log(params);
   request.send(JSON.stringify(params));
 }
 function sendPost() {
@@ -16,7 +17,7 @@ function sendPost() {
   request.setRequestHeader('Content-type', 'application/json');
 
   var params = {
-    "mediaPlayer": {
+    "mediaControl": {
         "control": "playPause"
     }
 }
@@ -30,7 +31,7 @@ function sendPostNext() {
   request.setRequestHeader('Content-type', 'application/json');
 
   var params = {
-    "mediaPlayer": {
+    "mediaControl": {
         "control": "nextTrack"
     }
 }

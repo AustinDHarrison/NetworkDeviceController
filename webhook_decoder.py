@@ -3,7 +3,7 @@ import json
 
 #Called when an error occurs, input: "code - error code, message - error message"
 def messageHandler(code, message):
-    debug = False
+    debug = True
     if debug == True:
         if code == 200:
             print("Webhook Recived. - 200")
@@ -36,39 +36,22 @@ def messageHandler(code, message):
 
 #Format the incoming data, packages it into a global variable and writes it to a file.
 def formatIncData(inc_data):
+    with open("jsonDataFile.json", "w") as write_file:
+        json.dump(inc_data, write_file, indent=4)
+    #Calls the main function.
+    main()
 
-    #Convert the incoming data to a string.
-    inc_data = str(inc_data)
-
-    #Convert the incoming data to a readable format.
-    inc_data = inc_data.replace("'",'"') 
-
-    #Convert the incoming data to JSON.
-    global data
-    data = json.loads(inc_data)
-
-    #With file open, dumps the data into the file.
-    with open("jsonDataFile.json", 'w') as outfile:
-        json.dump(data, outfile, indent=4)
-        print("JSON File Written.")
-
-        #Call the main function.
-        main()
 
 #Recives the webhook data and sends it towards the right files.
 def main():
-        #If data is not empty, continue.
-        if data:
-            #If the data requires "mediaPlayer", call mediaControlHandler in '/executer/media_controller.py'.
-            if data['mediaPlayer']:
-                import executer.media_controller as media_controller
-                #Sends the data to the media controller.
-                media_controller.mediaControlHandler(data)
+    with open("jsonDataFile.json", "r") as jsonFileData:
+        jsonData = json.load(jsonFileData)
+        if jsonData.get('debug',0):
+            #Calls the message handler.
+            messageHandler(686, 'Debug toggled.')
+            print("Debug toggled.")
 
-            messageHandler(200, '')
-        #If data is empty, return error.
-        else:
-            print("No Webhook JSON Recived. - Blank Webhook")
-            messageHandler(400, '')
-
-
+        #If the data requires "mediaControl", call mediaControlHandler in '/executer/media_controller.py'.
+        elif jsonData.get('mediaControl', 0):
+            import executer.media_controller as media_controller
+            media_controller.mediaControlHandler()
