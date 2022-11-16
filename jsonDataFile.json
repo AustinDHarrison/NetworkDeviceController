@@ -1,5 +1,13 @@
 {
     "mediaControl": {
-        "control": "playPause"
+        "playPauseToggle": false,
+        "nextTrack": {
+            "value": false,
+            "repeat": 0
+        },
+        "volume": {
+            "increment": 0,
+            "repeat": 0
+        }
     }
 }

@@ -14,11 +14,8 @@
 ### JSON Template
 
     {
-        "mediaPlayer": {
-            "playing": {
-                "value": true,
-                "repeat": 0
-            },
+        "mediaControl": {
+            "playPauseToggle": false,
             "nextTrack": {
                 "value": false,
                 "repeat": 0
