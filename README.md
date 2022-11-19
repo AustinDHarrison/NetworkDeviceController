@@ -1,6 +1,5 @@
 # WebhookReciver
-### Required Imports: 
-- - -
+
 ## **Local Python Server**
 ### **Required Pips**
     pip install flask
@@ -57,3 +56,7 @@
 * ***"connectionDeviceName"*** - The name of the server, this will be used by the tv to identify the server.
 
 ### **Events**
+* **Power**
+    * turn_on
+    * turn_off
+    * get_power_status
