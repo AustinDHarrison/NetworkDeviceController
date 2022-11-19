@@ -1,16 +1,18 @@
 # WebhookReciver
 ### Required Imports: 
 - - -
-## **_Local Python Server_**
-    flask
+## **Local Python Server**
+### **Required Pips**
+    pip install flask
 
 
 ## **_Executers_**
 #
 ##  **Media Controller**
-    pywin32 - 'python -m pip install --upgrade pywin32'
+### **Required Pips**
+    pip install --upgrade pywin32'
 
-#
+
 ### JSON Template
 
     {
@@ -31,4 +33,27 @@
 #
 
 ## **Web Controller**
-    webbrowser
+### **Required Pips**
+    pip install webbrowser
+
+#
+
+## **Bravia TV Controller**
+### **Required Pips**
+    pip install bravia_tv
+### **JSON Template**
+    { "braviaTVControl" : {
+        "config": {    
+            "ip" : "192.168.1.129",
+            "pin" : "0000",
+            "connectionDeviceName" : "DeviceName"
+        },
+        "event" : "powerOn"
+        }
+    } 
+
+* ***"IP"*** - The IP address of the TV, if left blank the script will conntect to 192.168.1.129.
+* ***"PIN"*** - The pin used to identify your device the TV, by making the pin balnk or 0000 the tv will display a pin on the screen.
+* ***"connectionDeviceName"*** - The name of the server, this will be used by the tv to identify the server.
+
+### **Events**

@@ -16,9 +16,17 @@ function sendPost() {
 
   request.setRequestHeader('Content-type', 'application/json');
 
-  var params = {
+  var params =     {
     "mediaControl": {
-        "control": "playPause"
+        "playPauseToggle": true,
+        "nextTrack": {
+            "value": false,
+            "repeat": 0
+        },
+        "volume": {
+            "increment": 0,
+            "repeat": 0
+        }
     }
 }
 
@@ -30,9 +38,17 @@ function sendPostNext() {
 
   request.setRequestHeader('Content-type', 'application/json');
 
-  var params = {
+  var params =     {
     "mediaControl": {
-        "control": "nextTrack"
+        "playPauseToggle": false,
+        "nextTrack": {
+            "value": true,
+            "repeat": 1
+        },
+        "volume": {
+            "increment": 0,
+            "repeat": 0
+        }
     }
 }
 

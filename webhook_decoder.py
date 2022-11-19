@@ -50,8 +50,11 @@ def main():
             #Calls the message handler.
             messageHandler(686, 'Debug toggled.')
             print("Debug toggled.")
-
+        if jsonData.get('browserControl',0):
+            import executer.browser_controller as browser_controller
+            #Calls the web control handler.
+            browser_controller.webControlHandler()
         #If the data requires "mediaControl", call mediaControlHandler in '/executer/media_controller.py'.
-        elif jsonData.get('mediaControl', 0):
+        if jsonData.get('mediaControl', 0):
             import executer.media_controller as media_controller
             media_controller.mediaControlHandler()
