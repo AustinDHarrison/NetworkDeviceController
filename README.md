@@ -41,21 +41,27 @@
 ### **Required Pips**
     pip install bravia_tv
 ### **JSON Template**
-    { "braviaTVControl" : {
-        "config": {    
-            "ip" : "192.168.1.129",
-            "pin" : "0000",
-            "connectionDeviceName" : "DeviceName"
+{
+    "braviaTVControl": {
+        "config": {
+            "ip": "192.168.1.129",
+            "pin": "2338",
+            "nickname": "DeviceName",
+            "deviceID": "1234567890"
         },
-        "event" : "powerOn"
+        "event": {
+            "value": "event",
+            "args": "eventArgs"
         }
-    } 
+    }
+}
 
 * ***"IP"*** - The IP address of the TV, if left blank the script will conntect to 192.168.1.129.
 * ***"PIN"*** - The pin used to identify your device the TV, by making the pin balnk or 0000 the tv will display a pin on the screen.
-* ***"connectionDeviceName"*** - The name of the server, this will be used by the tv to identify the server.
-
+* ***"NICKNAME"*** - The name of the server, this will be used by the tv to identify the server.
+* ***"DEVICEID"*** - The ID that the TV will use to identify the server, if left blank will be set to 0000.
 ### **Events**
+
 * **Power**
     * turn_on
     * turn_off

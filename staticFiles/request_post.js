@@ -16,19 +16,19 @@ function sendPost() {
 
   request.setRequestHeader('Content-type', 'application/json');
 
-  var params =     {
-    "mediaControl": {
-        "playPauseToggle": true,
-        "nextTrack": {
-            "value": false,
-            "repeat": 0
-        },
-        "volume": {
-            "increment": 0,
-            "repeat": 0
-        }
+  var params =     { "braviaTVControl" : {
+    "config": {    
+        "ip" : "192.168.1.129",
+        "pin" : "2338",
+        "nickname" : "DeviceName",
+        "deviceID" : "1234567890"
+    },
+    "event" : {
+      "value": "start_app",
+      "args": "Freevee"
     }
-}
+    }
+} 
 
   request.send(JSON.stringify(params));
 }

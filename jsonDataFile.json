@@ -1,13 +1,14 @@
-{ "braviaTVControl" : {
-    "config": {    
-        // The IP address of the TV, if left blank the script will conntect to 192.168.1.129.
-        "ip" : "192.168.1.129",
-        //The connect pin of the TV, by making the pin balnk or 0000 the tv will display a pin on the screen.
-        "pin" : "0000",
-        //The name of the server, this will be used by the tv to identify the server.
-        "connectionDeviceName" : "Webhook Python Server"
-    },
-
-    "event" : "power"
+{
+    "braviaTVControl": {
+        "config": {
+            "ip": "192.168.1.129",
+            "pin": "2338",
+            "nickname": "DeviceName",
+            "deviceID": "1234567890"
+        },
+        "event": {
+            "value": "start_app",
+            "args": "Freevee"
+        }
     }
-}  
+}
