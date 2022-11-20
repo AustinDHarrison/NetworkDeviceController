@@ -9,7 +9,7 @@
 #
 ##  **Media Controller**
 ### **Required Pips**
-    pip install --upgrade pywin32'
+    pip install --upgrade pywin32
 
 
 ### JSON Template
