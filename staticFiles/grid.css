@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@900&display=swap');
+* {
+    font-family: 'Epilogue', sans-serif;
+
+}
+.container{
+    /* center items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* center text */
+}
+  .grid-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+.grid-item-description{
+    background: -webkit-linear-gradient(#ee7a4b, #7452f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.grid-item {
+    margin: 10px;
+    height: 550px;
+    flex-basis: 100%;
+    -ms-flex: auto;
+    width: 259px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+
+    border-image: linear-gradient(#ee7a4b, #7452f8) 30;
+    border-width: 4px;
+    border-style: solid;
+  }
+  /* @media(min-width: 1073px) {
+    .grid-item {
+      flex-basis: 33.33%;
+    }
+
+  }
+  @media(min-width: 815px) {
+    .grid-item {
+      flex-basis: 50%;
+    }
+    .container {
+        margin-left: 100px;
+      }
+
+  } */
+.grid-item-title {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(#ee7a4b, #7452f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  .grid-item-title-emoji:after{
+
+    content: "";
+    display: block;
+    background-image: url('/staticFiles/desktop_computer_3d.png');
+    background-size: 100% 100%;
+
+}

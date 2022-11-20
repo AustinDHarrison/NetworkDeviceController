@@ -60,7 +60,7 @@ def connect_with_event(ip_address, pin, nickname, deviceID, event, eventArgs):
         if event == "start_app":
             eventArgs = "\"" + eventArgs + "\""
             print(eventArgs)
-            a = braviarc.start_app("YouTube")
+            a = braviarc.start_app("Amazon Prime")
             print(a)
         else:
             send_event = getattr(braviarc, event)

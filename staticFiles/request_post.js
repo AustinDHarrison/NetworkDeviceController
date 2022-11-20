@@ -1,34 +1,22 @@
-function sendPostWithData() {
-  var data = document.getElementById('dataInput').value;
-
+function playPauseToggle() {
   var request = new XMLHttpRequest();
   request.open("POST", "http://192.168.1.188:80/", true);
 
   request.setRequestHeader('Content-type', 'application/json');
 
-  var params = JSON.parse(data);
-  console.log(params);
-  request.send(JSON.stringify(params));
+  var params = {
+    "mediaControl": {
+        "playPauseToggle": true,
+        "nextTrack": {
+            "value": false,
+            "repeat": 0
+        },
+        "volume": {
+            "increment": 0,
+            "repeat": 0
+        }
+    }
 }
-function sendPost() {
-  var request = new XMLHttpRequest();
-  request.open("POST", "http://192.168.1.188:80/", true);
-
-  request.setRequestHeader('Content-type', 'application/json');
-
-  var params =     { "braviaTVControl" : {
-    "config": {    
-        "ip" : "192.168.1.129",
-        "pin" : "2338",
-        "nickname" : "DeviceName",
-        "deviceID" : "1234567890"
-    },
-    "event" : {
-      "value": "start_app",
-      "args": "Freevee"
-    }
-    }
-} 
 
   request.send(JSON.stringify(params));
 }

@@ -14,7 +14,10 @@ def webhook():
         return 'hey', 200
     else:
         abort(400)
-    
+
+@app.route('/control', methods=['GET'])
+def control():
+    return render_template('controller.html')
 @app.errorhandler(405)
 def page_not_found(e):
     return render_template('405.html'), 405
