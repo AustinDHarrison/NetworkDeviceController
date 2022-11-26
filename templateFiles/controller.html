@@ -20,15 +20,42 @@
         <div class="container">
             <div class="grid-row">
                 <div class="grid-item gradient-border">
-                    <h2 class="grid-item-title grid-item-title-emoji">Computer Media</h2>
+                
+                    <button  onclick='window.open("https\://github.com/AustinDHarrison/WebhookReciver#media-controller")'><h2  class="grid-item-title grid-item-title-emoji">Computer Media</h2></button>
                     <p class="grid-item-description">Control computers media settings.</p>
-                    <a class="grid-item-link" onclick="playPauseToggle()")>Play/Pause</a>
+                    <div class="grid-item gradient-border" style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    height: auto;
+                    width: 100%;
+                    ">
+                        <h1 class="grid-item-description">Volume</h1>
+                        <li><input style="margin-left: 20px;" max="100" min="-100" id="volumeInput"type="number" placeholder="Volume Value"/>
+                        <button class="grid-item-link"  onclick="changeVolume()" style="margin-left: 20px;">  Volume Apply</button></li>
+                    </div>
 
+                    <div class="grid-item gradient-border" style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    height: auto;
+                    width: 100%;
+                    ">
+                        <h1 class="grid-item-description" >Controls</h1>
+                        <li><button class="grid-item-link"  onclick="playPauseToggle()" style="margin-left: 20px;">Play/Pause</button></li>
+                        <li><button class="grid-item-link"  onclick="changeTrack(repeat=1)" style="margin-left: 20px;">Next Track</button></li>
+                        <li><button class="grid-item-link"  onclick="changeTrack(repeat=-1)" style="margin-left: 20px;">Previous Track</button></li>
+                    </div>
                 </div>
 
 
 
-                <div class="grid-item">
+                <div class="grid-item" style="margin-top: 20px;">
                     <h2 class="grid-item-title">TV Remote</h2>
                     <p class="grid-item-description">Control the TV.</p>
                 </div>
@@ -39,6 +66,6 @@
 
             </div>
         </div> 
-    <footer><div>Made by Austin.</div><div>-</div><a href="http://192.168.1.188">192.168.1.188</a></div></footer>
+    <footer style="margin-top: 20px;"><div>Made by Austin.</div><div>-</div><button href="http://192.168.1.188">192.168.1.188</button></div></footer>
     </body>
 </html>

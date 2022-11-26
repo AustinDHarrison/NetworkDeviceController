@@ -1,7 +1,8 @@
-# WebhookReciver
+# WebhookReciver - [192.168.1.188](http://192.168.1.188/control)
 
 ## **Local Python Server**
 ### **Required Pips**
+    pip install sys
     pip install flask
 
 
@@ -12,13 +13,14 @@
     pip install --upgrade pywin32
 
 
-### JSON Template
+### **JSON Template**
 
     {
         "mediaControl": {
             "playPauseToggle": false,
-            "nextTrack": {
-                "value": false,
+            "track": {
+                "next": false,
+                "previous": false,
                 "repeat": 0
             },
             "volume": {
@@ -27,8 +29,15 @@
             }
         }
     }
-* <https://learn.microsoft.com/uk-ua/windows/win32/inputdev/virtual-key-codes>
-
+* [Microsoft Virtual Key Codes Cheat Sheet.](https://learn.microsoft.com/en-gb/windows/win32/inputdev/virtual-key-codes)
+### **"playPauseToggle"**
+* Takes a boolean input, for example: **Incorrect -** *{"playPauseToggle": "false"}*, **Correct -** *{"playPauseToggle": false}*.
+### **"track"**
+* Takes a boolean input, for example: **Incorrect -** *{"nextTrack": {"value": "false"}*, **Correct -** *{"nextTrack": {"value": false}*.
+### **"volume"**
+* Takes an intager input.
+* If the increment inputed is **odd**, it will be **rounded up to the next even number**. This is because windows volume controls only lets it go up in increments of two.
+* The increment range is **100 to -100**. If you go out of this range an  **sever side error** *(not client side, the user will not recive an error)* will be thrown, check your values or limit how a user inputs the value.
 #
 
 ## **Web Controller**
@@ -44,7 +53,7 @@
     {
         "braviaTVControl": {
             "config": {
-                    "ip": "192.168.1.129",
+                "ip": "192.168.1.129",
                 "pin": "2338",
                 "nickname": "DeviceName",
                 "deviceID": "1234567890"

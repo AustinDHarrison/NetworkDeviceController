@@ -1,6 +1,7 @@
 from flask import Flask, request, abort, render_template
 import webhook_decoder
 import ctypes
+from multiprocessing import Process
 app = Flask(__name__, template_folder='templateFiles', static_folder='staticFiles')
 
 @app.route('/', methods=['POST'])
@@ -18,6 +19,9 @@ def webhook():
 @app.route('/control', methods=['GET'])
 def control():
     return render_template('controller.html')
+@app.route('/advanced', methods=['GET'])
+def advanced():
+    return render_template('advanced.html')
 @app.errorhandler(405)
 def page_not_found(e):
     return render_template('405.html'), 405

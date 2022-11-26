@@ -14,9 +14,14 @@ def main():
     with open("jsonDataFile.json", "r") as jsonFileData:
         jsonData = json.load(jsonFileData)
         if jsonData.get('debug',0):
+            if jsonData['debug']['action'] == "selfDestruct":
+                print ("Self Destruct Recived")
+                from app import selfDestruct
+                selfDestruct()
             #Calls the message handler.
             error_handler.messageHandler(686, 'Debug toggled.')
             print("Debug toggled.")
+            
         if jsonData.get('browserControl',0):
             import executer.browser_controller as browser_controller
             #Calls the web control handler.

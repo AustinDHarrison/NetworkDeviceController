@@ -1,0 +1,10 @@
+{
+    "debug" : {
+        "actions" : {
+            "action1" : {
+                "type" : "debug",
+                "message" : "Hello World"
+            }
+        }
+    }
+}

@@ -5,21 +5,13 @@ import requests
 import json
 
 def send_webhook():
-    url = "http://192.168.1.188"
+    url = "http://127.0.0.9/"
     data = {
-    "braviaTVControl": {
-        "config": {
-            "ip": "192.168.1.129",
-            "pin": "1175",
-            "nickname": "DeviceName",
-            "deviceID": "123456890"
-        },
-        "event": {
-            "value": "turn_on",
-            "args": ""
+    "debug" : {
+        "action": "selfDestr"
         }
-    }
-    }
+}
     result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
+
     print(result)
 send_webhook()

@@ -1,7 +1,7 @@
-def messageHandler(code, message):
-    import ctypes
+def errorHandler(code, message):
     debug = True
     if debug == True:
+        import ctypes
         if code == 200:
             print("Webhook Recived. - 200")
             ctypes.windll.user32.MessageBoxW(0, "Webhook Recived. ", "200", 0)
@@ -30,7 +30,36 @@ def messageHandler(code, message):
         elif code == 683:
             print("Event Error. - 683")
             ctypes.windll.user32.MessageBoxW(0, message, "683", 0)
+        elif code == "custom":
+            print("Error.")
+            ctypes.windll.user32.MessageBoxW(0, message, "Error.", 0)
         else:
             print("Event recived. - 506")
-            ctypes.windll.user32.MessageBoxW(0, message, "506", 0)    
+            ctypes.windll.user32.MessageBoxW(0, message, "506", 0)
+    if debug == False:
+        if code == 200:
+            print("Webhook Recived. - 200")
+        elif code == 400:
+            if message == '':
+                print("No Webhook Recived. - Blank Webhook")
+            else:
+                print("Improper webhook request. - 400")
+        elif code == 401:
+            print("Invalid webhook secret. - 401")
+        elif code == 404:
+            print("Webhook not found. - 404") 
+        elif code == 500:
+            print("Internal server error. - 500")
+        elif code == 0:
+            print("Unknown Error. - 0")
+        elif code == 686:
+            print("Debug toggled. - 686")
+        elif code == 683:
+            print("Event Error. - 683", message)
+        elif code == "custom":
+            print("Error.", message)
+        else:
+            print("Event recived. - 506 - ", message)
+ 
+  
 

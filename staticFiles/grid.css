@@ -21,7 +21,6 @@
     -webkit-text-fill-color: transparent;
 }
 .grid-item {
-    margin: 10px;
     height: 550px;
     flex-basis: 100%;
     -ms-flex: auto;

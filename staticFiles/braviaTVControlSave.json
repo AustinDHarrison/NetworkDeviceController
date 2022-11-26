@@ -1,0 +1,14 @@
+{
+    "braviaTVControl": {
+        "config": {
+                "ip": "192.168.1.129",
+            "pin": "0000",
+            "nickname": "DeviceName",
+            "deviceID": "1234567890"
+        },
+        "event": {
+            "value": "event",
+            "args": "eventArgs"
+        }
+    }
+}

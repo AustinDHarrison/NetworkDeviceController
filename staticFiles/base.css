@@ -1,4 +1,7 @@
-
+li{
+    list-style-type: none;
+    margin-top: 10px;
+}
 @media (min-width: 860px) { 
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
@@ -26,6 +29,11 @@ p{
 
 .large_center{
     text-align: center;
+    /* center horizontaly and verticaly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     
     
 }
@@ -50,10 +58,15 @@ p{
     font-weight: 700px;
 
 }
+/* center content */
 
-a{
+button{
     text-decoration: none;
     color: #262626;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 19px;
 }
 header {
     display: flex;
@@ -63,12 +76,12 @@ header {
     margin-bottom: 50px;
 }
       
-a:hover {
+button:hover {
     color: #ff9950;
   }
   
   /* Style the active/current link*/
-a.active {
+  button.active {
     color: #ee7a4b;
     }
     footer{

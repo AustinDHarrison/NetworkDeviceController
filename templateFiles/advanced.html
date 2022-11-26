@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <script src="/staticFiles/request_post.js"></script>
+        <script src="/staticFiles/tv_remote_init.js"></script>
+        <link rel="stylesheet" href="/staticFiles/base.css">
+        <link rel="stylesheet" href="/staticFiles/grid.css">
+
+        <link rel="stylesheet" href="/staticFiles/responsive_mobile.css">
+        <link rel="icon" href="/staticFiles/desktop_computer_3d.png">
+    </head>
+  
+    <body>
+      <header>
+        <h1 class="website_title">Austin's Local Server</h1>
+      </header>
+        <div>
+            <div class="grid-row">
+
+
+                
+                <div class="grid-item gradient-border" style="width: 100%;">
+                    <button  onclick='window.open("https\://github.com/AustinDHarrison/WebhookReciver#media-controller")'><h2  class="grid-item-title grid-item-title-emoji">TV Remote Initialization</h2></button>
+                    <p class="grid-item-description">Setup for TV Remote.</p>
+                    <div class="grid-item gradient-border" style="display: flex;justify-content: center;align-items: center;flex-direction: column;margin-top: 20px;height: auto;width: 100%;
+                    ">
+                        <h1 class="grid-item-description" >Request Config</h1>
+
+                        <p class="grid-item-description" style="margin-bottom: 5px;">IP - The ip adress of your tv.</p>
+                        <li><input style="margin-left: 20px;" id="ipInput"type="text" placeholder="IP - 192.168.1.???"/></li>
+
+                        <p class="grid-item-description" style="margin-bottom: 5px;">Pin - Leave blank if you would like to retrive it.</p>
+                        <li><input style="margin-left: 20px;" id="pinInput"type="text" placeholder="Pin"/></li>
+
+                        <p class="grid-item-description" style="margin-bottom: 5px;">Nickname - What you would like to call your device. (Stored by the TV)</p>
+                        <li><input style="margin-left: 20px;" id="nicknameInput"type="text" placeholder="Nickname"/></li>
+
+                        <p class="grid-item-description" style="margin-bottom: 5px;">Device ID - Your devices identifier ID. (Stored by the TV)</p>
+                        <li><input style="margin-left: 20px;" id="deviceIdInput"type="text" placeholder="Device ID"/></li>
+
+                        <p class="grid-item-description" style="margin-bottom: 5px;"></p>
+                        <button class="grid-item-link"  onclick="init()" style="margin-left: 20px;font-size: 30px;">Send</button></li>
+                    </div>
+                    <div class="grid-item gradient-border" style="display: flex;justify-content: center;align-items: center;flex-direction: column;margin-top: 20px;height: auto;width: 100%;
+                    ">
+                    <h1 class="grid-item-description">Send Init Request</h1>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                
+
+            </div>
+        </div> 
+    <footer style="margin-top: 20px;"><div>Made by Austin.</div><div>-</div><button href="http://192.168.1.188">192.168.1.188</button></div></footer>
+    
+    </body>
+</html>

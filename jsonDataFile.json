@@ -1,14 +1,13 @@
 {
-    "braviaTVControl": {
-        "config": {
-            "ip": "192.168.1.129",
-            "pin": "1175",
-            "nickname": "DeviceName",
-            "deviceID": "123456890"
+    "mediaControl": {
+        "playPauseToggle": true,
+        "nextTrack": {
+            "value": false,
+            "repeat": 0
         },
-        "event": {
-            "value": "turn_on",
-            "args": ""
+        "volume": {
+            "increment": 0,
+            "repeat": 0
         }
     }
 }
